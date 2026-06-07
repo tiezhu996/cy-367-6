@@ -7,6 +7,7 @@ import type { OverviewResponse } from "./types";
 import { FeatureStrip } from "./components/FeatureStrip";
 import { MetricGrid } from "./components/MetricGrid";
 import { OperationsTable } from "./components/OperationsTable";
+import { RankingTable } from "./components/RankingTable";
 
 export default function App() {
   const [overview, setOverview] = useState<OverviewResponse>(createFallbackOverview());
@@ -40,6 +41,10 @@ export default function App() {
           <MetricGrid items={overview.kpis} />
         </div>
         <FeatureStrip items={overview.features} />
+        <section className="work-panel">
+          <h2 className="mb-5 text-2xl font-black">学习时长排行榜 Top10</h2>
+          <RankingTable records={overview.ranking} />
+        </section>
         <section className="work-panel">
           <h2 className="mb-5 text-2xl font-black">运营任务流</h2>
           <OperationsTable records={overview.records} />

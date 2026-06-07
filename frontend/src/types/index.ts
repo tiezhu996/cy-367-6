@@ -22,6 +22,15 @@ export interface OperationRecord {
   priority: string;
 }
 
+export interface RankingItem {
+  rank: number;
+  user_id: string;
+  user_name: string;
+  total_minutes: number;
+  current_streak: number;
+  total_hours: string;
+}
+
 export interface OverviewResponse {
   appName: string;
   appCode: string;
@@ -29,4 +38,5 @@ export interface OverviewResponse {
   features: FeatureItem[];
   kpis: KpiItem[];
   records: OperationRecord[];
+  ranking: RankingItem[];
 }
